@@ -52,6 +52,7 @@ class CpblPlayersName
      */
     public static function romanize(string $name) : string|null
     {
+        $name = str_replace(CpblPlayersNameConst::EXCLUDE_STRINGS, '', $name);
         return self::search($name);
     }
 

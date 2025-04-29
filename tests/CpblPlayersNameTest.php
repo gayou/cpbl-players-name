@@ -27,6 +27,19 @@ class CpblPlayersNameTest extends TestCase
     }
 
     /**
+     * 選手名の先頭に記号がついていてもローマ字表記を取得できること
+     *
+     */
+    public function testRomanizePrefixSymbol()
+    {
+        // *陳佳樂
+        $this->assertSame(CpblPlayersName::romanize('*陳佳樂'), 'CHEN Jia Le');
+
+        // ◎二宮衣沙貴
+        $this->assertSame(CpblPlayersName::romanize('◎二宮衣沙貴'), 'NINOMIYA Isaki');
+    }
+
+    /**
      * CPBLに在籍していない選手はnullが返ってくる
      *
      */

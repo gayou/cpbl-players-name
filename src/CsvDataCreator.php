@@ -55,7 +55,7 @@ class CsvDataCreator
             $href = $anchor->getAttribute('href');
 
             $id = str_replace('/team/person?acnt=', '', $href);
-            $name = str_replace(['*', '◎'], '', $anchor->textContent);
+            $name = str_replace(CpblPlayersNameConst::EXCLUDE_STRINGS, '', $anchor->textContent);
 
             $players[$id]['zh'] = $name;
         }
