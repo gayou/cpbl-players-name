@@ -1,0 +1,42 @@
+{
+    "name": "gayou/cpbl-players-name",
+    "description": "cpbl-players-name is a library that converts CPBL player names to Roman alphabet.",
+    "type": "library",
+    "license": "",
+    "authors": [
+        {
+            "name": "gayou",
+            "email": "gayou.ura@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ],
+        "psr-4": {
+            "Gayou\\CpblPlayersName\\": "src/"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "phpunit/phpunit": "*"
+    },
+    "scripts": {
+        "setup-cpbl-players-name": [
+            "Gayou\\CpblPlayersName\\CsvDataCreator::setup"
+        ],
+        "post-install-cmd": [
+            "composer setup-cpbl-players-name"
+        ],
+        "post-update-cmd": [
+            "composer setup-cpbl-players-name"
+        ],
+        "post-package-install": [
+            "composer setup-cpbl-players-name"
+        ],
+        "post-package-update": [
+            "composer setup-cpbl-players-name"
+        ]
+
+    }
+}
